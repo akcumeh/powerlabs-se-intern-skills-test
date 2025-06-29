@@ -7,20 +7,36 @@ const ProductCard = ({ product, onAddToCart }) => {
     };
 
     return (
-        <div className="bg-color1 border border-color3 rounded-lg p-sml md:p-6 text-center product-card-hover shadow-sm">
-            <h3 className="inter-semibold text-base md:text-md mb-smol md:mb-3 text-color4 leading-tight">{product.name}</h3>
-            <p className="text-inter-light text-sm">
-                {product.desc}
-            </p>
-            <p className="inter-bold text-sm md:text-base mb-smol md:mb-4 text-color2">
-                {formatCurrency(product.price)}
-            </p>
-            <button
-                onClick={() => onAddToCart(product)}
-                className="bg-color2 hover:bg-color3 text-color1 text-inter-medium px-4 md:px-6 py-2 md:py-3 rounded-md transition-colors duration-200 text-md md:text-base w-med md:w-med mb-smol"
-            >
-                Add to Cart
-            </button>
+        <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-full flex flex-col">
+            <div className="text-center flex-1 flex flex-col">
+                {/* Icon */}
+                <div className="w-16 h-16 bg-gradient-to-br from-color2 to-color3 rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-2xl text-white font-bold">
+                        {product.name.split(' ').map(word => word.charAt(0)).join('').slice(0, 2)}
+                    </span>
+                </div>
+
+                <h3 className="font-bold text-lg text-color4 mb-3 leading-tight hover:text-color2 transition-colors duration-300">
+                    {product.name}
+                </h3>
+
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed flex-1">
+                    {product.desc}
+                </p>
+
+                <div className="mb-6">
+                    <p className="text-2xl font-bold bg-gradient-to-r from-color2 to-blue-600 bg-clip-text text-transparent">
+                        {formatCurrency(product.price)}
+                    </p>
+                </div>
+
+                <button
+                    onClick={() => onAddToCart(product)}
+                    className="w-full bg-gradient-to-r from-color2 to-blue-600 hover:from-blue-600 hover:to-color2 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 mt-auto"
+                >
+                    Add to Cart
+                </button>
+            </div>
         </div>
     );
 };

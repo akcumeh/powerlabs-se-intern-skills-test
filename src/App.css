@@ -1,10 +1,14 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .product-card-hover {
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px #1b82f626;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(27, 130, 246, 0.15);
 }
 
 @media (hover: none) {
