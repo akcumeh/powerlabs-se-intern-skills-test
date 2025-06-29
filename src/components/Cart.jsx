@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import CartItem from './CartItem';
+import CouponInput from './CouponInput';
 
 const Cart = ({ cartItems, onUpdateQuantity, onRemoveFromCart }) => {
+    const [couponApplied, setCouponApplied] = useState(false);
+    const [couponError, setCouponError] = useState(false);
+    const [removingItems, setRemovingItems] = useState(new Set());
+
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-NG', {
             style: 'currency',
@@ -16,43 +22,90 @@ const Cart = ({ cartItems, onUpdateQuantity, onRemoveFromCart }) => {
         }, 0);
     };
 
+    const handleUpdateQuantity = (id, quantity) => {
+        if (quantity <= 0) {
+            setRemovingItems(prev => new Set([...prev, id]));
+
+            setTimeout(() => {
+                onRemoveFromCart(id);
+                setRemovingItems(prev => {
+                    const newSet = new Set(prev);
+                    newSet.delete(id);
+                    return newSet;
+                });
+            }, 1500);
+        } else {
+            onUpdateQuantity(id, quantity);
+        }
+    };
+
+    const handleApplyCoupon = (couponCode) => {
+        if (couponCode === 'POWERLABSx') {
+            setCouponApplied(true);
+            setCouponError(false);
+        } else {
+            setCouponApplied(false);
+            setCouponError(true);
+            setTimeout(() => setCouponError(false), 3000);
+        }
+    };
+
     const subtotal = calculateSubtotal();
+    const discountAmount = couponApplied ? subtotal * 0.132 : 0;
+    const total = subtotal - discountAmount;
 
     if (cartItems.length === 0) {
         return (
-            <div className="cart">
-                <h2>Shopping Cart</h2>
-                <div className="empty-cart">
-                    <p>Your cart is empty</p>
-                    <p>Add some products to get started!</p>
+            <div className="max-w-4xl mx-auto">
+                <h2 className="text-color4 text-xl lg:text-2xl font-bold mb-8 text-center">Shopping Cart</h2>
+                <div className="text-center py-16">
+                    <p className="text-color4 text-lg mb-2">Your cart is empty</p>
+                    <p className="text-color4">Add some products to get started!</p>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="cart">
-            <h2>Shopping Cart ({cartItems.length} items)</h2>
+        <div className="max-w-4xl mx-auto">
+            <h2 className="text-color4 text-xl lg:text-2xl font-bold mb-8 text-center">
+                Shopping Cart ({cartItems.length} items)
+            </h2>
 
-            <div className="cart-items">
+            <div className="mb-8">
                 {cartItems.map(item => (
                     <CartItem
                         key={item.id}
                         item={item}
-                        onUpdateQuantity={onUpdateQuantity}
+                        onUpdateQuantity={handleUpdateQuantity}
                         onRemove={onRemoveFromCart}
+                        isRemoving={removingItems.has(item.id)}
                     />
                 ))}
             </div>
 
-            <div className="cart-summary">
-                <div className="summary-line">
+            <CouponInput
+                onApplyCoupon={handleApplyCoupon}
+                couponApplied={couponApplied}
+                couponError={couponError}
+            />
+
+            <div className="border-t-2 border-color3 pt-6">
+                <div className="flex justify-between items-center mb-3 text-color4">
                     <span>Subtotal:</span>
-                    <span className="amount">{formatCurrency(subtotal)}</span>
+                    <span className="text-color2 font-medium">{formatCurrency(subtotal)}</span>
                 </div>
-                <div className="summary-line total">
-                    <span><strong>Total:</strong></span>
-                    <span className="amount"><strong>{formatCurrency(subtotal)}</strong></span>
+
+                {couponApplied && (
+                    <div className="flex justify-between items-center mb-3 text-green-600 font-medium">
+                        <span>Discount (13.2%):</span>
+                        <span>-{formatCurrency(discountAmount)}</span>
+                    </div>
+                )}
+
+                <div className="flex justify-between items-center text-lg font-bold text-color4 pt-4 border-t border-color3">
+                    <span>Total:</span>
+                    <span className="text-color2">{formatCurrency(total)}</span>
                 </div>
             </div>
         </div>
