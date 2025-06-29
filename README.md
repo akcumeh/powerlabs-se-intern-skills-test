@@ -19,10 +19,19 @@ This project is the second stage in the application process for a Software Engin
 
 ## My Process
 ### Built With
-- [React.JS](https://react.dev) through [Vite](https://vite.dev/guide/)
+- [React.JS](https://react.dev)
+- [TailwindCSS](https://tailwindcss.com)
 
 ### Resources Used
+- [Vite](https://vite.dev/guide/)
+- [TailwindCSS Docs](https://tailwindcss.com/docs/)
 
 ### What I've learned
 
 ## Author
+Thank you for reading up to this point!
+
+Check out my profiles here:
+- [GitHub - @akcumeh](https://github.com/akcumeh)
+- [X (fka Twitter) - @akcumeh](https://x.com/akcumeh)
+- [LinkedIn - Angel Umeh](https://linkedin.com/in/angelumeh/)

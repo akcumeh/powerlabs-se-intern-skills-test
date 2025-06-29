@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Owl Keychain",
+        "desc": "A cute owl companion for your keys. 1.5in tall & wide.",
+        "price": 1500
+    },
+    {
+        "id": 2,
+        "name": "Turtle Keychain",
+        "desc": "A charming turtle companion for your keys. 7in long, 5in wide.",
+        "price": 2500
+    },
+    {
+        "id": 3,
+        "name": "Large Cat Plushie",
+        "desc": "A cute and huggable cat. 22in from head to foot.",
+        "price": 10000
+    },
+    {
+        "id": 4,
+        "name": "Small Dog Plushie",
+        "desc": "An adorable dog plushie. 8in tall.",
+        "price": 8500
+    },
+    {
+        "id": 5,
+        "name": "Stability Duck",
+        "desc": "A duck with stability: the ability to stab. 7in tall",
+        "price": 8500
+    },
+    {
+        "id": 6,
+        "name": "Pedro the Parrot",
+        "desc": "The most adorable avian yapper on this floating rock. Multicolored or single color theme. 8.5in tall.",
+        "price": 10000
+    },
+    {
+        "id": 7,
+        "name": "Heart-Shaped Cat",
+        "desc": "Share the love this Valentine's with this heart-shaped cat. 5in wide.",
+        "price": 8500
+    },
+    {
+        "id": 8,
+        "name": "Christmas Elf",
+        "desc": "Santa's assistants, who have been working hard on your next gift. 10in tall.",
+        "price": 10000
+    },
+    {
+        "id": 9,
+        "name": "Rudolph the Red-nosed Reindeer",
+        "desc": "Santa's favorite reindeer, guiding a sleighful of gifts and cheer to your house. 10in tall while sitting.",
+        "price": 10000
+    },
+    {
+        "id": 10,
+        "name": "Santa Claus",
+        "desc": "All hail the jolly fat man! 10in tall.",
+        "price": 10000
+    }
+]
