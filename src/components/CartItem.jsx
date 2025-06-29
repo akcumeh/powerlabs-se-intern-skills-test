@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
-
-const CartItem = ({ item, onUpdateQuantity, onRemove, isRemoving }) => {
+const CartItem = ({ item, onUpdateQuantity, isRemoving }) => {
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-NG', {
             style: 'currency',
