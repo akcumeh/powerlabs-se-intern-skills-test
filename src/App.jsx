@@ -1,20 +1,46 @@
+import { useState } from 'react';
 import ProductList from './components/ProductList';
+import Cart from './components/Cart';
 import { useCart } from './hooks/useCart';
 import './App.css';
 
 function App() {
-    const { addToCart } = useCart();
+    const { cartItems, addToCart, updateQuantity, removeFromCart } = useCart();
+    const [activeTab, setActiveTab] = useState('products');
+
+    const cartItemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     return (
-        <div className="min-h-screen bg-color1 font-inter">
-            <header className="bg-white shadow-md border-b border-color3 sticky top-0 z-10">
-                <div className="w-xlrg mx-auto px-3 sm:px-4 lg:px-6 py-3 sm:py-4 lg:py-6">
-                    <h1 className="inter-bold text-md sm:text-lg lg:text-xl text-center text-color4">PowerLabs Shop</h1>
-                </div>
+        <div className="app">
+            <header>
+                <h1>PowerLabs Shop</h1>
+                <nav className="nav-tabs">
+                    <button
+                        onClick={() => setActiveTab('products')}
+                        className={`nav-btn ${activeTab === 'products' ? 'active' : ''}`}
+                    >
+                        Products
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('cart')}
+                        className={`nav-btn ${activeTab === 'cart' ? 'active' : ''}`}
+                    >
+                        Cart ({cartItemCount})
+                    </button>
+                </nav>
             </header>
 
-            <main className="w-xlrg mx-auto px-3 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8">
-                <ProductList onAddToCart={addToCart} />
+            <main>
+                {activeTab === 'products' && (
+                    <ProductList onAddToCart={addToCart} />
+                )}
+                {activeTab === 'cart' && (
+                    <Cart
+                        cartItems={cartItems}
+                        onUpdateQuantity={updateQuantity}
+                        onRemoveFromCart={removeFromCart}
+                    />
+                )}
             </main>
         </div>
     );
