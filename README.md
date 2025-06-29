@@ -5,7 +5,6 @@
 - [My Process](#my-process)
     - [Built With](#built-with)
     - [Resources Used](#resources-used)
-    - [What I've learned](#what-ive-learned)
 - [Author](#author)
 
 
@@ -14,8 +13,17 @@
 This project is the second stage in the application process for a Software Engineering internship at PowerLabs.
 
 ## Screenshots
-![image1]()
-![image2]()
+Shopfront on Desktop
+![Product Page (Desktop)](src/assets/screenshots/ss-products.png)
+![Cart Page (Desktop)](src/assets/screenshots/ss-cart.png)
+
+Discount Functionality
+- Wrong coupon codes:
+![bad coupon](src/assets/screenshots/ss-bad-coupon-1.png)
+![bad coupon](src/assets/screenshots/ss-bad-coupon-2.png)
+
+- Correct coupon code
+![good coupon](src/assets/screenshots/ss-good-coupon.png)
 
 ## My Process
 ### Built With
@@ -25,8 +33,6 @@ This project is the second stage in the application process for a Software Engin
 ### Resources Used
 - [Vite](https://vite.dev/guide/)
 - [TailwindCSS Docs](https://tailwindcss.com/docs/)
-
-### What I've learned
 
 ## Author
 Thank you for reading up to this point!
