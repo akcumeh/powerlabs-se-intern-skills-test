@@ -8,7 +8,7 @@ export const useProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('/products.json');
+                const response = await fetch('/powerlabs-se-intern-skills-test/products.json');
                 if (!response.ok) throw new Error('Failed to fetch products');
                 const data = await response.json();
                 setProducts(data);
