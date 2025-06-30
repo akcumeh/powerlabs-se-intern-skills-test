@@ -17,6 +17,13 @@
 ## About
 This project is the second stage in the application process for a Software Engineering internship at PowerLabs.
 
+It is a basic shop, where users can:
+- View product details, including an image, product name and short product description
+- Add items to cart
+- Switch to the Cart page at the top right
+- Increase or decrease the number of each item selected, or remove the item(s) altogether
+- Apply any coupon codes (but only the correct coupon applies a discount to the total)
+
 ## Project Setup
 ### Prerequisites
 - [Node.js (>= v18)](https://nodejs.org/en/download)
