@@ -102,11 +102,12 @@ UX Flow
 - Deployment & Hosting: [GitHub Pages](https://github.com)
 
 ### Resources Used
-- [Vite](https://vite.dev/guide/)
-- [TailwindCSS Docs](https://tailwindcss.com/docs/)
+- [Vite](https://vite.dev/guide/) - to set up the build
+- [TailwindCSS Docs](https://tailwindcss.com/docs/) - for setting up Tailwind & for styling
+- [Colorhunt](https://colorhunt.co) - to create the color palette for the project
 - [Node.JS](https://nodejs.org/)
-- [Exposing link on network in Vite](https://dev.to/kadea-academy/how-to-expose-vite-local-instance-to-the-network-eg-mobile-device-if4)
-- [Question - embedding videos in markdown](https://github.com/orgs/community/discussions/133813)
+- [Exposing link on network in Vite](https://dev.to/kadea-academy/how-to-expose-vite-local-instance-to-the-network-eg-mobile-device-if4) - to view the project on a mobile screen
+- [Question - embedding videos in markdown](https://github.com/orgs/community/discussions/133813) - to update the markdown file
 
 And of course, [simple Google search](https://google.com). :D
 

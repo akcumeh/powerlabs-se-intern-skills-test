@@ -21,7 +21,7 @@ const CartItem = ({ item, onUpdateQuantity, isRemoving }) => {
             }`}>
             {isRemoving && (
                 <div className="absolute inset-0 flex items-center justify-center z-10">
-                    <div className="bg-green-500 text-white px-4 py-2 rounded font-medium animate-pulse">
+                    <div className="bg-green-500 text-white px-4 py-2 rounded font-medium">
                         Item removed.
                     </div>
                 </div>

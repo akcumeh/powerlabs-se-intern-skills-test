@@ -27,13 +27,15 @@ const Cart = ({ cartItems, onUpdateQuantity, onRemoveFromCart }) => {
             setRemovingItems(prev => new Set([...prev, id]));
 
             setTimeout(() => {
-                onRemoveFromCart(id);
-                setRemovingItems(prev => {
-                    const newSet = new Set(prev);
-                    newSet.delete(id);
-                    return newSet;
-                });
-            }, 1500);
+                setTimeout(() => {
+                    onRemoveFromCart(id);
+                    setRemovingItems(prev => {
+                        const newSet = new Set(prev);
+                        newSet.delete(id);
+                        return newSet;
+                    });
+                }, 500);
+            }, 2500);
         } else {
             onUpdateQuantity(id, quantity);
         }

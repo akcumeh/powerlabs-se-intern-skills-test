@@ -25,7 +25,7 @@ const ProductList = ({ onAddToCart }) => {
     return (
         <div className="w-full">
             <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-color4 mb-4">Our Products</h2>
+                <h2 className="text-3xl font-bold text-color4 mb-4">Our Products</h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-color2 to-color3 mx-auto rounded-full"></div>
                 <p className="text-gray-600 mt-4 text-lg">Discover our collection of adorable companions</p>
             </div>
